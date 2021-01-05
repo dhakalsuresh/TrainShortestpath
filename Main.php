@@ -14,8 +14,8 @@ if (empty($file) || !is_file($file)) {
 $data = $processCsv->init($file)->getRawContent();
 
 // Step 2: prompt questions and collect answers
-$answerA = $processCsv->question('A');
-$answerB = $processCsv->question('B');
+$answerA = strtoupper($processCsv->question('A'));
+$answerB = strtoupper($processCsv->question('B'));
 
 list($dist, $path) = $processCsv->processRequest($data, $answerA, $answerB);
 echo $processCsv->printMessage($dist, $path, $answerA, $answerB);

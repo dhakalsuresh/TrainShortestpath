@@ -67,8 +67,13 @@ class ProcessCSV
         }
 
         $mappedData = array_flip($graphKey);
-        $fromIndex = $mappedData[$answerA];
-        $toIndex = $mappedData[$answerB];
+        $fromIndex = $mappedData[$answerA] ?? null;
+        $toIndex = $mappedData[$answerB] ?? null;
+
+        if (is_null($fromIndex) || is_null($toIndex)) {
+            echo "Invalid input\n";
+            exit;
+        }
 
         foreach ($graphData as $key => $value) {
             $graph[] = array_values($value);
