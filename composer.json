@@ -1,0 +1,15 @@
+{
+    "name": "suresh/test",
+    "authors": [
+        {
+            "name": "Suresh Dhakal",
+            "email": "sureshdhakal11@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {        
+        "classmap": ["tests/", "app/"]        
+    }
+}
